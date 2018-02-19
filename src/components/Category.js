@@ -15,7 +15,6 @@ class Category extends Component {
             .then(response => this.setState({clues: response}))
             )
     }
-
     componentWillMount(){
         if(this.props.category.id === undefined){
             this.props.history.push('/')
