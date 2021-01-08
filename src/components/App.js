@@ -7,8 +7,9 @@ import {Link} from 'react-router-dom';
 class App extends Component {
 
     componentDidMount(){
+      let rand = Math.floor(Math.random() * 31000) + 1
         if(this.props.categories.length === 0){
-            fetch('http://jservice.io/api/categories?count=100')
+            fetch('http://jservice.io/api/categories?offset='+String(rand)+'&count=5')
             .then(data => {return data.json()})
             .then(response => this.props.onReceiveCategories(response))
         }
